@@ -1,5 +1,6 @@
 # juliasets-c
 Julia-Sets C language Code
+IDE = Dev-C++
 
 f(z)=z^(2)+c
 
