@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <complex.h>
-#define K 75
+#define K 2
 void main()
 {
     complex double z, c;
@@ -19,26 +19,24 @@ void main()
     fprintf(pgmimg, "P2\n");  
 	   // Writing Width and Height 
     fprintf(pgmimg, "%d %d\n", 2048, 2048); 
+    //Writing MAX gray Value
      fprintf(pgmimg, "255\n");  
     //printf("P2\n4000 4000\n255\n");
 	int min = cabs(z);
-    for (a=0 ; a<2048 ; ++a)
+    for (a=0 ; a<myHeight ; ++a)
     {
-        for (b=0 ; b<2048 ; ++b)
+        for (b=0 ; b<myWidth ; ++b)
         {
-           // c =  0.101 + 0.482*I;   //c1) 0048 X = 0, Y= 1, Z=4 ,W = 8     XY = 0 old için =1 deðeri kullanýldý  ögr no son 4 hane= 0048
-            //c =  (0.110 )- (1.048)*I;  /c2
-             //c = -(0.101) + (0.482)*I;  // c3);
-            c = (0.01)-(0.8410)*I;  //c4
+            c = -(0.101)+(0.482)*I;  //c4
              z = ((a / myWidth )* xwidth +xmin) + ((b / myHeight)*yheight+ymin)*I;
              i = 0;
-            // printf(" cabsz Baþlangic - %f - ,",cabs(z));
+            // printf(" cabsz Ba?langic - %f - ,",cabs(z));
              while (cabs(z) < 4 && i < K){ //k = 75
              	z = z*z + c;	
              	i++;
              	/*
              	if(cabs(z) < min ){
-             		min = cabs(z); //EN KÜÇÜK SAYIYI BULMA
+             		min = cabs(z); //find min value
 				 }
 				 */
 			 } 
@@ -55,4 +53,6 @@ void main()
     }
        fclose(pgmimg);  
 }
-
+ // c =  0.101 + 0.482*I;   //c1) 0048 X = 0, Y= 1, Z=4 ,W = 8     XY = 0 old iÃ§in =1 de?eri kullanyldy  Ã¶gr no son 4 hane= 0048
+            //c =  (0.110 )- (1.048)*I;  /c2
+             //c = -(0.101) + (0.482)*I;  // c3);
