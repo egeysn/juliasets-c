@@ -53,6 +53,4 @@ void main()
     }
        fclose(pgmimg);  
 }
- // c =  0.101 + 0.482*I;   //c1) 0048 X = 0, Y= 1, Z=4 ,W = 8     XY = 0 old için =1 de?eri kullanyldy  ögr no son 4 hane= 0048
-            //c =  (0.110 )- (1.048)*I;  /c2
-             //c = -(0.101) + (0.482)*I;  // c3);
+ 
