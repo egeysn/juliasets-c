@@ -1,5 +1,10 @@
 # juliasets-c
 Julia-Sets C language Code
+
+Requirements:
+DevC++;
+.pgm Image Viewer
+
 IDE = Dev-C++
 
 f(z)=z^(2)+c
